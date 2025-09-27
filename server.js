@@ -47,6 +47,9 @@ app.use("/api/users", userRoutes);
 app.use("/api/questions", questionRoutes);
 app.use("/api/stats", statsRoutes);
 app.use("/api/ranking", rankingRoutes);
+app.get("/", (req, res) => {
+  res.send("✅ Servidor corriendo correctamente");
+});
 
 // helper central que emite las stats a todos los dashboards
 async function broadcastStats(ioInstance) {
